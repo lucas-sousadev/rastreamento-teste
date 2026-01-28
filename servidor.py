@@ -4,9 +4,10 @@ app = Flask(__name__)
 
 @app.route("/receber", methods=["POST"])
 def receber():
-    dados = request.json
-    print("Dados recebidos:")
+    dados = request.get_json(silent=True)
+    print("📍 Localização recebida:")
     print(dados)
     return jsonify({"status": "ok"})
 
-app.run(host="0.0.0.0", port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
