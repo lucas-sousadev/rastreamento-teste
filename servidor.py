@@ -15,4 +15,4 @@ def receber():
     logging.info(dados)
     return jsonify({"status": "ok"})
 
-# ⚠️ NÃO use app.run() no Render
+
